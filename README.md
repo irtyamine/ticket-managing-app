@@ -1,46 +1,40 @@
-# Getting Started with Create React App
+# Coding Assignment
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The goal of this assignment is to showcase your ability to develop features and your coding style. Due to the time constraint you will have to prioritize what you work on, and have to try and balance cleanliness with just getting it done.
 
-## Available Scripts
+Even though the app is small, one can easily spend the whole week working on it: perfecting styles, testing every single method, or carefully crafting every single line of code. Please don't! Do as much as you can in about two hours and share the results.
 
-In the project directory, you can run:
+The most important part of the interview will come after this one, when we look at the app together, talk about the decisions you have made, etc..
 
-### `yarn start`
+## Stackblitz vs local development
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+You can work on the application directly in Stackblitz, but we find it easier to work with it locally. You can download the source code using the `Download Project` button (the cloud download icon) in the top-left area of this the Stackblitz UI.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Local development
 
-### `yarn test`
+When you download the application locally, you can use either `yarn` or `npm install` to install dependencies.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Use `yarn start` or `npm start` to run dev server, and `yarn test` or `npm test` to run unit tests.
 
-### `yarn build`
+## Ticketing managing application
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Build a ticket managing app, where the user can _add_, _filter_ (by status), _assign_, and _complete_ tickets.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- The app should have two screens:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+  1. the list screen and
+  2. the details screen.
 
-### `yarn eject`
+  Please use the React Router to manage the transitions between them.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- RxJS is used for the backend service. Knowledge of RxJS is a bonus, but we understand that not all React developers are familiar with it, so you are free to convert observables to promises if you choose to.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- You can use any state management library you want (or none at all). e.g. Redux, MobX, or just React context + `useState`/`useReducer`.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- Write a couple of tests. The goal here is not to build a production-quality app, so don't test every single detail. Two or three tests should be good enough.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- Don't forget about error handling and race conditions. The API server has a random delay. If you bump it up to say 10 seconds, would the app still work correctly?
 
-## Learn More
+## Submitting your solution
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+Please send us the link to your Stackblitz fork, or a public git repo (e.g. GitHub). We will continue to work on it during the pair-programming sessions. Please also indicate approximately how long you spent on the submission.
