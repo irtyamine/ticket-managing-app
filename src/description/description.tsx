@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './description.css';
 import { Link } from 'react-router-dom';
 import { BackendService, Ticket } from '../backend';
