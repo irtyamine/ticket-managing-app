@@ -1,7 +1,7 @@
 import React, { Fragment, useEffect, useState } from 'react';
 import './description.css';
-import { BackendService, Ticket } from '../backend';
 import { Link } from 'react-router-dom';
+import { BackendService, Ticket } from '../backend';
 
 interface DescriptionProps {
   backend: BackendService;
@@ -19,8 +19,8 @@ const Description = ({ backend, id }: DescriptionProps) => {
       try {
         const result = await backend.ticket(id).toPromise();
         setTicket(result);
-      } catch (error) {
-        setError(error);
+      } catch (e) {
+        setError(e);
       }
     };
     fetchData();
@@ -32,21 +32,21 @@ const Description = ({ backend, id }: DescriptionProps) => {
 
   if (error) {
     return (
-      <Fragment>
+      <>
         <h2 data-testid="title">Ticket</h2>
         <p>We couldn't find the ticket with id "{id}"</p>
-      </Fragment>
+      </>
     );
   }
 
   return (
     <div className="description">
       {ticket ? (
-        <Fragment>
+        <>
           <h2 data-testid="title">Ticket</h2>
           <p>{ticket.description}</p>
           <Link to="/">Go Home</Link>
-        </Fragment>
+        </>
       ) : (
         <span>...</span>
       )}

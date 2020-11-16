@@ -17,7 +17,7 @@ const Add = ({ backend }: AddProps) => {
   } as TicketAddForm);
 
   const [error, setErrorForm] = useState(null as Error | null);
-  const [success, setSuccessForm] = useState(null as Boolean | null);
+  const [success, setSuccessForm] = useState(null as boolean | null);
 
   const onSubmit = async (event: SyntheticEvent) => {
     event.preventDefault();

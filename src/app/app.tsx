@@ -38,7 +38,7 @@ const App = ({ backend }: AppProps) => {
   } else {
     Content =
       tickets.length > 0 ? (
-        <Fragment>
+        <>
           <ul data-testid="tickets">
             {tickets
               .filter(
@@ -52,7 +52,7 @@ const App = ({ backend }: AppProps) => {
                 </li>
               ))}
           </ul>
-        </Fragment>
+        </>
       ) : (
         <p>No tickets</p>
       );

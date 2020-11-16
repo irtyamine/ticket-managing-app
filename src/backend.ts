@@ -47,6 +47,7 @@ export class BackendService {
     if (found) return found;
     throw new Error(`Ticket (id=${id}) not found`);
   };
+
   private findUserById = (id: number) => this.storedUsers.find(user => user.id === +id);
 
   tickets() {
