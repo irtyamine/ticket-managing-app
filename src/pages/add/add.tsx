@@ -1,7 +1,7 @@
 import React, { SyntheticEvent, useState } from 'react';
 import { Link } from 'react-router-dom';
 import './add.css';
-import { BackendService, Ticket } from '../backend';
+import { BackendService, Ticket } from '../../backend';
 
 interface AddProps {
   backend: BackendService;

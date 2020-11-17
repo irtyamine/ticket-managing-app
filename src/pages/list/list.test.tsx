@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, waitFor, screen, fireEvent, act } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
-import App from './app';
+import App from './list';
 
 test('should render page with success if API returns the correct response', async () => {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any

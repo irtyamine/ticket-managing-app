@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import './app.css';
-import { BackendService, Ticket } from '../backend';
+import './list.css';
+import { BackendService, Ticket } from '../../backend';
 
-interface AppProps {
+interface ListProps {
   backend: BackendService;
 }
 
@@ -12,7 +12,7 @@ type TicketFormData = {
   isChecked: boolean;
 };
 
-const App = ({ backend }: AppProps) => {
+const List = ({ backend }: ListProps) => {
   const [tickets, setTickets] = useState([] as Ticket[]);
   const [form, setTicketForm] = useState({ filter: '', isChecked: false } as TicketFormData);
   const [error, setError] = useState(null as Error | null);
@@ -59,7 +59,7 @@ const App = ({ backend }: AppProps) => {
   }
 
   return (
-    <div className="app">
+    <div className="list">
       <h2>Tickets</h2>
 
       <form>
@@ -109,4 +109,4 @@ const App = ({ backend }: AppProps) => {
   );
 };
 
-export default App;
+export default List;

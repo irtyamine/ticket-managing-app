@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './description.css';
 import { Link } from 'react-router-dom';
-import { BackendService, Ticket } from '../backend';
+import { BackendService, Ticket } from '../../backend';
 
 interface DescriptionProps {
   backend: BackendService;
