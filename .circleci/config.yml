@@ -40,7 +40,7 @@ workflows:
       - unit_test:
           requires:
             - build
-      - bundle_size:
+      - build_step:
           requires:
             - build
 jobs:
@@ -63,7 +63,7 @@ jobs:
           name: Running unit tests
           command: |
             sudo yarn test:ci
-  bundle_size:
+  build_step:
     <<: *docker_defaults
     steps:
       - *attach_workspace
