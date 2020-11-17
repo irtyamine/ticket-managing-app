@@ -56,6 +56,10 @@ jobs:
           command: |
             sudo yarn lint
       - run:
+          name: Running dependencies check
+          command: |
+            sudo yarn depcheck
+      - run:
           name: Running unit tests
           command: |
             sudo yarn test:ci
