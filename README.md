@@ -1,3 +1,5 @@
+[![Build Status](https://circleci.com/gh/willmendesneto/.svg?style=shield)](https://circleci.com/gh/willmendesneto/ticket-managing-app)
+
 # Coding Assignment
 
 The goal of this assignment is to showcase your ability to develop features and your coding style. Due to the time constraint you will have to prioritize what you work on, and have to try and balance cleanliness with just getting it done.
