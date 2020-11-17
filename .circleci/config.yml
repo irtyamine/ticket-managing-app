@@ -21,10 +21,10 @@ install_steps: &install_steps
     - run:
         name: Installing Dependencies
         command: |
-          npm install --silent
+          yarn install --silent --frozen-lockfile
     - save_cache:
         name: Save node_modules cache
-        key: dependency-cache-{{ .Branch }}-{{ checksum "package-lock.json" }}
+        key: dependency-cache-{{ .Branch }}-{{ checksum "yarn.lock" }}
         paths:
           - node_modules/
     - persist_to_workspace:
@@ -54,11 +54,11 @@ jobs:
       - run:
           name: Running code lint
           command: |
-            sudo npm run lint
+            sudo yarn lint
       - run:
           name: Running unit tests
           command: |
-            sudo npm run test:ci
+            sudo yarn test:ci
   bundle_size:
     <<: *docker_defaults
     steps:
@@ -66,5 +66,5 @@ jobs:
       - run:
           name: Checking project build
           command: |
-            sudo npm build
+            sudo yarn build
 
