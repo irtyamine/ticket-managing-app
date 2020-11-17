@@ -4,6 +4,7 @@ import { MemoryRouter } from 'react-router-dom';
 import App from './app';
 
 test('should render page with success if API returns the correct response', async () => {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const backend: any = {
     tickets: () => ({
       toPromise: () => [
@@ -27,6 +28,7 @@ test('should render page with success if API returns the correct response', asyn
 });
 
 test('should render page with no tickets message if list is empty', async () => {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const backend: any = {
     tickets: () => ({
       toPromise: () => [],
@@ -40,6 +42,7 @@ test('should render page with no tickets message if list is empty', async () => 
 });
 
 test('should filter tickers if search input is filled', async () => {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const backend: any = {
     tickets: () => ({
       toPromise: () => [

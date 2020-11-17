@@ -68,6 +68,7 @@ export class BackendService {
 
   newTicket(payload: { description: string }) {
     const newTicket: Ticket = {
+      // eslint-disable-next-line no-plusplus
       id: ++this.lastId,
       description: payload.description,
       assigneeId: null,
@@ -88,6 +89,7 @@ export class BackendService {
       return of(foundTicket).pipe(
         delay(randomDelay()),
         tap((ticket: Ticket) => {
+          // eslint-disable-next-line no-param-reassign
           ticket.assigneeId = +userId;
         }),
       );
@@ -96,12 +98,13 @@ export class BackendService {
     return throwError(new Error('ticket or user not found'));
   }
 
-  complete(ticketId: number, completed: boolean) {
+  complete(ticketId: number) {
     const foundTicket = this.findTicketById(+ticketId);
     if (foundTicket) {
       return of(foundTicket).pipe(
         delay(randomDelay()),
         tap((ticket: Ticket) => {
+          // eslint-disable-next-line no-param-reassign
           ticket.completed = true;
         }),
       );

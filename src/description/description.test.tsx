@@ -4,6 +4,7 @@ import { MemoryRouter } from 'react-router-dom';
 import Description from './description';
 
 test('should render page with success if API returns the correct response', async () => {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const backend: any = {
     ticket: (id: number) => ({
       toPromise: () => ({
@@ -23,6 +24,7 @@ test('should render page with success if API returns the correct response', asyn
 });
 
 test('should render page with error for ticket if API returns an error', async () => {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const backend: any = {
     ticket: (id: number) => ({
       toPromise: () => {
@@ -39,6 +41,7 @@ test('should render page with error for ticket if API returns an error', async (
 });
 
 test('should render page with loading state when requesting API', async () => {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const backend: any = {
     ticket: () => ({
       toPromise: () => null,

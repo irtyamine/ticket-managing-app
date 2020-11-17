@@ -28,8 +28,8 @@ const Add = ({ backend }: AddProps) => {
 
       await backend.newTicket(form).toPromise();
       setSuccessForm(true);
-    } catch (error) {
-      setErrorForm(error);
+    } catch (e) {
+      setErrorForm(e);
     }
   };
 
@@ -41,21 +41,24 @@ const Add = ({ backend }: AddProps) => {
       <form onSubmit={onSubmit}>
         <fieldset>
           <legend>Adding ticket</legend>
-          <label>Description</label>
-          <input
-            type="text"
-            value={form.description}
-            aria-label="description"
-            onChange={event => {
-              setTicketForm(
-                form =>
-                  ({
-                    ...form,
-                    description: event.target.value || '',
-                  } as TicketAddForm),
-              );
-            }}
-          />
+          <label htmlFor="description">
+            Description
+            <input
+              type="text"
+              id="description"
+              value={form.description}
+              aria-label="description"
+              onChange={event => {
+                setTicketForm(
+                  field =>
+                    ({
+                      ...field,
+                      description: event.target.value || '',
+                    } as TicketAddForm),
+                );
+              }}
+            />
+          </label>
           <button type="submit" aria-label="submit">
             Add
           </button>

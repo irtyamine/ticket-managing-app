@@ -4,6 +4,7 @@ import { MemoryRouter } from 'react-router-dom';
 import Add from './add';
 
 test('should render success message if ticket is added', async () => {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const backend: any = {
     newTicket: () => ({
       toPromise: () => [],
@@ -15,6 +16,7 @@ test('should render success message if ticket is added', async () => {
   const input = getByLabelText('description');
   fireEvent.change(input, { target: { value: 'new ticket' } });
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   expect((input as any).value).toBe('new ticket');
   act(() => {
     fireEvent.click(getByLabelText('submit'));
@@ -25,6 +27,7 @@ test('should render success message if ticket is added', async () => {
 });
 
 test('should render error message if form is empty', async () => {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const backend: any = {
     newTicket: () => ({
       toPromise: () => [],
@@ -36,6 +39,7 @@ test('should render error message if form is empty', async () => {
   const input = getByLabelText('description');
   fireEvent.change(input, { target: { value: '   ' } });
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   expect((input as any).value).toBe('   ');
   act(() => {
     fireEvent.click(getByLabelText('submit'));
@@ -46,6 +50,7 @@ test('should render error message if form is empty', async () => {
 });
 
 test('should render error message if API fails', async () => {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const backend: any = {
     newTicket: () => ({
       toPromise: () => {
@@ -59,6 +64,7 @@ test('should render error message if API fails', async () => {
   const input = getByLabelText('description');
   fireEvent.change(input, { target: { value: 'error message' } });
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   expect((input as any).value).toBe('error message');
   act(() => {
     fireEvent.click(getByLabelText('submit'));

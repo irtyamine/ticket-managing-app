@@ -26,8 +26,8 @@ const App = ({ backend }: AppProps) => {
         setTickets(result);
       };
       fetchData();
-    } catch (error) {
-      setError(error);
+    } catch (e) {
+      setError(e);
     }
   }, [backend]);
 
@@ -65,36 +65,42 @@ const App = ({ backend }: AppProps) => {
       <form>
         <fieldset>
           <legend>Filters</legend>
-          <label>Description</label>
-          <input
-            type="text"
-            name="filter"
-            value={form.filter}
-            aria-label="filter"
-            onChange={event => {
-              setTicketForm(
-                form =>
-                  ({
-                    ...form,
-                    filter: event.target.value || '',
-                  } as TicketFormData),
-              );
-            }}
-          />
-          <label>Completed tasks?</label>
-          <input
-            type="checkbox"
-            checked={form.isChecked}
-            onChange={event => {
-              setTicketForm(
-                form =>
-                  ({
-                    ...form,
-                    isChecked: !form.isChecked,
-                  } as TicketFormData),
-              );
-            }}
-          />
+          <label htmlFor="filter">
+            Description
+            <input
+              type="text"
+              name="filter"
+              id="completed"
+              value={form.filter}
+              aria-label="filter"
+              onChange={event => {
+                setTicketForm(
+                  field =>
+                    ({
+                      ...field,
+                      filter: event.target.value || '',
+                    } as TicketFormData),
+                );
+              }}
+            />
+          </label>
+          <label htmlFor="completed">
+            Completed tasks?
+            <input
+              type="checkbox"
+              id="completed"
+              checked={form.isChecked}
+              onChange={() => {
+                setTicketForm(
+                  field =>
+                    ({
+                      ...field,
+                      isChecked: !field.isChecked,
+                    } as TicketFormData),
+                );
+              }}
+            />
+          </label>
           <Link to="/add">Add</Link>
         </fieldset>
       </form>

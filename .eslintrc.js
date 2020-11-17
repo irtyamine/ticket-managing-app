@@ -32,6 +32,7 @@ module.exports = {
   },
   rules: {
     'linebreak-style': 'off',
+    'react/no-unescaped-entities': 'off',
     '@typescript-eslint/explicit-module-boundary-types': 'off',
     'prettier/prettier': [
       'error',
