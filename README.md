@@ -1,4 +1,4 @@
-[![Build Status](https://circleci.com/gh/willmendesneto/.svg?style=shield)](https://circleci.com/gh/willmendesneto/ticket-managing-app)
+[![Build Status](https://circleci.com/gh/willmendesneto/ticket-managing-app.svg?style=shield)](https://circleci.com/gh/willmendesneto/ticket-managing-app)
 
 # Coding Assignment
 
